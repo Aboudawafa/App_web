@@ -8,6 +8,7 @@ export class Etudiant {
  email:string;
  username:string;
  password:string;
+ selected:boolean;
 
 
 }

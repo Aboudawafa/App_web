@@ -1,5 +1,6 @@
+import { SalleService } from './shared/service/salle.service';
+import { FormsModule } from '@angular/forms';
 import { EtudiantService } from './shared/service/etudiant.service';
-
 
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,11 +20,13 @@ import { FullLayoutComponent } from "./layouts/full/full-layout.component";
 import { CustomOption } from "./shared/toastr/custom-option";
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
-
-
 import * as $ from 'jquery';
 import { AuthServices } from './shared/service/auth.service';
-
+import { ModalsComponent } from './components/bootstrap/modals/modals.component';
+import { MatiereService } from './shared/service/matiere.service';
+import { ClasseService } from './shared/service/classe.service';
+import { SeanceService } from './shared/service/seance.service';
+import { AnneeService } from './shared/service/annee.service';
 
 
 
@@ -36,6 +39,9 @@ export function createTranslateLoader(http: HttpClient) {
         AppComponent,
         FullLayoutComponent,
         ContentLayoutComponent,
+      
+      
+      
         
     ],
     imports: [
@@ -44,6 +50,7 @@ export function createTranslateLoader(http: HttpClient) {
         AppRoutingModule,
         SharedModule,
         HttpClientModule,
+        FormsModule ,
         ToastModule.forRoot(),
         NgbModule.forRoot(),
         TranslateModule.forRoot({
@@ -64,6 +71,11 @@ export function createTranslateLoader(http: HttpClient) {
         AuthServices,
         AuthGuard,
         EtudiantService,
+        MatiereService,
+        ClasseService,
+        SalleService,
+        AnneeService,
+        SeanceService,
     ],
     bootstrap: [AppComponent]
 })

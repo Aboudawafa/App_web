@@ -1,5 +1,4 @@
 import { Dashboard1Component } from './../../../dashboard/dashboard1/dashboard1.component';
-
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
@@ -16,7 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 export class LoginPageComponent {
-
+  
     @ViewChild('f') loginForm: NgForm;
 
     constructor(
@@ -38,6 +37,14 @@ export class LoginPageComponent {
         }) 
         this.loginForm.reset();
     }
+
+
+
+    logout()
+    {
+
+    }
+
     // On Forgot password link click
     onForgotPassword() {
         this.router.navigate(['forgotpassword'], { relativeTo: this.route.parent });

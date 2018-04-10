@@ -64,6 +64,14 @@ export const Full_ROUTES: Routes = [
     loadChildren: './inbox/inbox.module#InboxModule'
   },
   {
+    path: 'emploi',
+    loadChildren: './emploi/emploi.module#EmploiModule'
+  },
+  {
+    path: 'emplois',
+    loadChildren: './emplois/emplois.module#EmploisModule'
+  },
+  {
     path: 'taskboard',
     loadChildren: './taskboard/taskboard.module#TaskboardModule'
   },
