@@ -29,20 +29,20 @@ export class SeanceService {
      this.seances.next(action);
    }*/
   getSeances():Observable<any>{
-    return this._http.get("http://localhost:4000/seances");
+    return this._http.get("http://localhost:5000/seances");
   }
  getSeancebyId(id : number) :Observable<any> {
-    return this._http.get("http://localhost:4000/seances/"+ id );
+    return this._http.get("http://localhost:5000/seances/"+ id );
  }
 addSeance(data :Seance) : Observable<any>{
-    return this._http.post("http://localhost:4000/seances", data);
+    return this._http.post("http://localhost:5000/seances", data);
 }
 updateSeance(id : number, data) : Observable<any>{
-    return this._http.put("http://localhost:4000/seances/" +id, data);
+    return this._http.put("http://localhost:5000/seances/" +id, data);
 
 }
 deleteSeance(id : number) : Observable<any>{
-    return this._http.delete("http://localhost:4000/seances/"+id );
+    return this._http.delete("http://localhost:5000/seances/"+id );
 }
 
 }
