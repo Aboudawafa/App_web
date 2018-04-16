@@ -27,6 +27,19 @@ import { MatiereService } from './shared/service/matiere.service';
 import { ClasseService } from './shared/service/classe.service';
 import { SeanceService } from './shared/service/seance.service';
 import { AnneeService } from './shared/service/annee.service';
+import { ActualiteComponent } from './actualite/actualite.component';
+import { AbsenceComponent } from './absence/absence.component';
+import { ClasseComponent } from './classe/classe.component';
+import { MatiereComponent } from './matiere/matiere.component';
+import { NiveauComponent } from './niveau/niveau.component';
+import { NoteComponent } from './note/note.component';
+import { PaiementComponent } from './paiement/paiement.component';
+import { SalleComponent } from './salle/salle.component';
+import { SpecialiteComponent } from './specialite/specialite.component';
+import { UniteComponent } from './unite/unite.component';
+import { TypeNoteComponent } from './type-note/type-note.component';
+import { AnneeComponent } from './annee/annee.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -39,9 +52,7 @@ export function createTranslateLoader(http: HttpClient) {
         AppComponent,
         FullLayoutComponent,
         ContentLayoutComponent,
-      
-      
-      
+       
         
     ],
     imports: [

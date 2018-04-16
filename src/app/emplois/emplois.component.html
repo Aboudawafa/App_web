@@ -37,9 +37,9 @@
                                       <label class="custom-control-label" for="{{i}}"></label>
                                   </div>
                                   </td>
-                                  <td><div *ngFor="let seance of seances">{{seance.id_classe}}</div></td>
-                                  <td><div *ngFor="let seance of seances">{{seance.id_matiere}}</div></td>
-                                  <td><div *ngFor="let seance of seances">{{seance.id_salle}}</div></td>
+                                 <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
+                                  <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
+                                  <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
                                  
                                   <td><div *ngFor="let seance of seances">{{seance.date_debut | date :  "dd.MM.y"}}</div></td>
                                   <td><div *ngFor="let seance of seances">{{seance.date_fin | date :  "dd.MM.y"}}</div></td>
