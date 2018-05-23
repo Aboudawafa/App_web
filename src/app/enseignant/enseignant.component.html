@@ -1,0 +1,75 @@
+
+	<div class="row justify-content-md-center">
+		<div class="col-md-9">
+	        <div class="card">
+	            <div class="card-header">
+	                <h4 class="card-title" id="bordered-layout-card-center">Ajout d'un enseignant </h4>	              
+	            </div>
+	            <div class="card-body">
+	                <div class="px-3">
+   
+						<form class="form form-horizontal form-bordered">
+							<div class="form-body">
+	                			<div class="form-group row">
+	                            	<label class="col-md-3 label-control" for="eventRegInput1">Email</label>
+	                            	<div class="col-md-9">
+	                            		<input type="email" id="email" class="form-control" placeholder="email" name="email"  required   [(ngModel)]="enseignant.email">
+	                            	</div>
+		                        </div>
+
+	                			<div class="form-group row">
+	                            	<label class="col-md-3 label-control" for="eventRegInput2">Nom</label>
+	                            	<div class="col-md-9">
+	                            		<input type="text" id="firstName" class="form-control" placeholder="nom" name="firstName" required   [(ngModel)]="enseignant.firstName">
+	                            	</div>
+		                        </div>
+
+	                			<div class="form-group row">
+	                            	<label class="col-md-3 label-control" for="eventRegInput3">prénom</label>
+	                            	<div class="col-md-9">
+	                            		<input type="text" id="lastName" class="form-control" placeholder="prenom" name="lastName" required   [(ngModel)]="enseignant.lastName">
+	                            	</div>
+		                        </div>
+
+	                			<div class="form-group row">
+	                            	<label class="col-md-3 label-control" for="eventRegInput4">Cin</label>
+	                            	<div class="col-md-9">
+	                            		<input type="number" id="cin" class="form-control" placeholder="cin" name="cin" required   [(ngModel)]="enseignant.cin">
+	                            	</div>
+		                        </div>
+
+		                        <div class="form-group row">
+	                        		<label class="col-md-3 label-control" for="eventRegInput5">Date de naissance</label>
+	                        		<div class="col-md-9">
+	                            		<input type="date" id="date_naissance" class="form-control" name="date_naissance" placeholder="date de naissance" required   [(ngModel)]="enseignant.date_naissance">
+	                            	</div>
+		                        </div>
+                                <div class="form-group row">
+	                        		<label class="col-md-3 label-control" for="eventRegInput6">Nom d'utilisateur</label>
+	                        		<div class="col-md-9">
+	                            		<input type="text" id="username" class="form-control" name="username" placeholder="nom utilisateur" required=""  [(ngModel)]="enseignant.username">
+	                            	</div>
+                                </div>
+                                <div class="form-group row">
+	                        		<label class="col-md-3 label-control" for="eventRegInput7">Mot de passe </label>
+	                        		<div class="col-md-9">
+	                            		<input type="password" id="password" class="form-control" name="password" placeholder="mot de passe" required=""  [(ngModel)]="enseignant.password">
+	                            	</div>
+		                        </div>
+
+							</div>
+
+							<div class="form-actions center">
+	                            <button type="button" class="btn btn-raised btn-warning mr-1">
+	                            	<i class="ft-x"></i> Annuler
+	                            </button>
+	                            <button type="button" class="btn btn-raised btn-primary" (click)="addEnseignant()" routerLink="/enseignants">
+	                                <i class="fa fa-check-square-o"></i> Enregistrer
+	                            </button>
+	                        </div>
+						</form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>

@@ -1,0 +1,70 @@
+<!--Extended Table starts-->
+<div class="row">
+    <div class="col-12">
+        <div class="content-header"></div>
+        <p class="content-sub-header"></p>
+    </div>
+</div>
+<section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Liste des classes</h4>
+                </div>
+                <div class="mb-3">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a routerLink="/classe" class=" ft-plus btn btn-raised gradient-crystal-clear white shadow-big-navbar " >Ajouter une classe </a>
+    
+                    </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive-md text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th></th>
+                                    <th>Description</th>
+                                    <th>Niveau</th>
+                        
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let classe of classes; let i=index" >
+                                    <td>{{i+1}}</td>
+                                    <td>
+                                        <div class="custom-control custom-checkbox m-0" >
+                                            <input type="checkbox" class="custom-control-input" id="{{i}}" (click)="switch(classe.id)" >
+                                            <label class="custom-control-label" for="{{i}}"></label>
+                                        </div>
+                                    </td>
+                                    <td>{{classe.nom}}</td>
+                                    <td>{{classe.niveau.description}}</td>
+                                
+                                  
+                                 
+                                    <td>
+                                      
+                                        
+                                        <a class="success p-0" data-original-title="" title="" >
+                                            <i class="ft-edit-2 font-medium-3"></i>
+                                            
+                                        </a>
+                                        <a class="danger p-0" data-original-title="" title="" (click)="delete()">
+                                            <i class="ft-x font-medium-3"></i>
+                                        </a>
+                                    </td> 
+                                </tr>
+                                <tr>
+                      
+                                    
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Extended Table Ends-->

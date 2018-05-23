@@ -1,10 +1,9 @@
+import { AnneeService } from './shared/service/annee.service';
 import { SalleService } from './shared/service/salle.service';
 import { FormsModule } from '@angular/forms';
 import { EtudiantService } from './shared/service/etudiant.service';
-
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./shared/shared.module";
@@ -26,34 +25,29 @@ import { ModalsComponent } from './components/bootstrap/modals/modals.component'
 import { MatiereService } from './shared/service/matiere.service';
 import { ClasseService } from './shared/service/classe.service';
 import { SeanceService } from './shared/service/seance.service';
-import { AnneeService } from './shared/service/annee.service';
-import { ActualiteComponent } from './actualite/actualite.component';
-import { AbsenceComponent } from './absence/absence.component';
-import { ClasseComponent } from './classe/classe.component';
-import { MatiereComponent } from './matiere/matiere.component';
-import { NiveauComponent } from './niveau/niveau.component';
-import { NoteComponent } from './note/note.component';
-import { PaiementComponent } from './paiement/paiement.component';
-import { SalleComponent } from './salle/salle.component';
-import { SpecialiteComponent } from './specialite/specialite.component';
-import { UniteComponent } from './unite/unite.component';
-import { TypeNoteComponent } from './type-note/type-note.component';
-import { AnneeComponent } from './annee/annee.component';
-import { AdminComponent } from './admin/admin.component';
+import { EnseignantService } from './shared/service/enseignant.service';
+import { ActualiteService } from './shared/service/actualite.service';
+import { NiveauService } from './shared/service/niveau.service';
+import { AbsenceEtudiantService } from './shared/service/absence-etudiant.service';
+import { UniteService } from './shared/service/unite.service';
+
+
+
 
 
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-  }
- 
+}
+
 @NgModule({
     declarations: [
         AppComponent,
         FullLayoutComponent,
         ContentLayoutComponent,
-       
-        
+
+
+
     ],
     imports: [
         BrowserAnimationsModule,
@@ -61,7 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
         AppRoutingModule,
         SharedModule,
         HttpClientModule,
-        FormsModule ,
+        FormsModule,
         ToastModule.forRoot(),
         NgbModule.forRoot(),
         TranslateModule.forRoot({
@@ -69,7 +63,7 @@ export function createTranslateLoader(http: HttpClient) {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
-              }
+            }
         }),
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyBr5_picK8YJK7fFR2CPzTVMj6GG1TtRGo'
@@ -87,6 +81,13 @@ export function createTranslateLoader(http: HttpClient) {
         SalleService,
         AnneeService,
         SeanceService,
+        EnseignantService,
+        ActualiteService,
+        NiveauService,
+        AbsenceEtudiantService,
+        UniteService,
+    
+ 
     ],
     bootstrap: [AppComponent]
 })

@@ -7,19 +7,19 @@ import {Observable} from "rxjs/Observable";
 export class TypeService {
   constructor(public _http:Http) { }
   getTypess():Observable<any>{
-    return this._http.get("http://localhost:4000/types");
+    return this._http.get("http://localhost:3000/types");
   }
  getTypesbyId(id : number) :Observable<any> {
-    return this._http.get("http://localhost:4000/types/"+ id );
+    return this._http.get("http://localhost:3000/types/"+ id );
  }
 addTypes(data) : Observable<any>{
-    return this._http.post("http://localhost:4000/types", data);
+    return this._http.post("http://localhost:3000/types", data);
 }
 updateTypes(id : number, data) : Observable<any>{
-    return this._http.put("http://localhost:4000/types/" +id, data);
+    return this._http.put("http://localhost:3000/types/" +id, data);
 
 }
 deleteTypes(id : number) : Observable<any>{
-    return this._http.delete("http://localhost:4000/types/"+id );
+    return this._http.delete("http://localhost:3000/types/"+id );
 }
 }

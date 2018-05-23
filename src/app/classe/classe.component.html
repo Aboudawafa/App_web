@@ -1,0 +1,54 @@
+<div class="row match-height">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+              <h4 class="card-title" id="basic-layout-form-center">Ajouter un nouveau classe</h4>
+              
+            </div>
+            <div class="card-body">
+                <div class="px-3">
+
+                    <form class="form">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="form-body">
+                       
+                                    <div class="form-group" class="form-group col-12 mb-2">
+                                        <label for="eventInput2">Description</label>
+                                        <input type="text" id="nom" class="form-control"  name="nom" required   [(ngModel)]="classe.nom">
+                                    </div>
+
+                                      
+                                        <div class="form-group col-12 mb-2">
+                                            <label for="issueinput5">Niveau</label>
+                                            <select id="niveau" name="id_niveau" [(ngModel)]="classe.niveau" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority">
+                                                <option></option>      
+                                                <option *ngFor="let niveau of niveaux" [value]="niveau.id">
+                                                    {{niveau.libelle}}
+                                                </option>
+                                            
+                                            </select>
+                                        </div>
+                           
+
+                
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions center">
+                            <button type="reset" class="btn btn-raised btn-warning mr-1">
+                                <i class="ft-x"></i> Annuler
+                            </button>
+                            <button type="button" class="btn btn-raised btn-primary" (click)="addClasse()"  routerLink="/classes">
+                                <i class="fa fa-check-square-o"></i> Enregistrer
+                            </button>
+                        </div>
+                    </form>	
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

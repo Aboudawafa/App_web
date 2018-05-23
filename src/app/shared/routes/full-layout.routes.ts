@@ -51,19 +51,65 @@ export const Full_ROUTES: Routes = [
     path: 'colorpalettes',
     loadChildren: './color-palette/color-palette.module#ColorPaletteModule'
   },
-  {
-    path: 'chat',
-    loadChildren: './chat/chat.module#ChatModule'
-  },
-  {
-    path: 'chat-ngrx',
-    loadChildren: './chat-ngrx/chat-ngrx.module#ChatNGRXModule'
-  },
-  {
-    path: 'inbox',
-    loadChildren: './inbox/inbox.module#InboxModule'
-  },
   
+  {
+    path: 'classe',
+    loadChildren: './classe/classe.module#ClasseModule'
+  },
+  {
+    path: 'classes',
+    loadChildren: './classes/classes.module#ClassesModule'
+  },
+  {
+    path: 'genereremploi',
+    loadChildren: './genereremploi/genereremploi.module#GenereremploiModule'
+  },
+  {
+    path: 'addseance',
+    loadChildren: './addseance/addseance.module#AddseanceModule'
+  },
+  {
+    path: 'salle',
+    loadChildren: './salle/salle.module#SalleModule'
+  },
+  {
+    path: 'paiement',
+    loadChildren: './paiement/paiement.module#PaiementModule'
+  },
+  {
+    path: 'salles',
+    loadChildren: './salles/salles.module#SallesModule'
+  },
+
+  {
+    path: 'etudiant',
+    loadChildren: './etudiant/etudiant.module#EtudiantModule'
+  },
+  {
+    path: 'enseignant',
+    loadChildren: './enseignant/enseignant.module#EnseignantModule'
+  },
+  {
+    path: 'matiere',
+    loadChildren: './matiere/matiere.module#MatiereModule'
+  },
+  {
+    path: 'matieres',
+    loadChildren: './matieres/matieres.module#MatieresModule'
+  },
+  {
+    path: 'enseignants',
+    loadChildren: './enseignants/enseignants.module#EnseignantsModule'
+  },
+  {
+    path: 'unite',
+    loadChildren: './unite/unite.module#UniteModule'
+  },
+
+  {
+    path: 'unites',
+    loadChildren: './unites/unites.module#UnitesModule'
+  },
   {
     path: 'emplois',
     loadChildren: './emplois/emplois.module#EmploisModule'
@@ -73,17 +119,30 @@ export const Full_ROUTES: Routes = [
     loadChildren: './actualite/actualite.module#ActualiteModule'
   },
   {
+    path: 'actualites',
+    loadChildren: './actualites/actualites.module#ActualitesModule'
+  },
+  {
     path: 'absence',
     loadChildren: './absence/absence.module#AbsenceModule'
   },
   {
-    path: 'taskboard',
-    loadChildren: './taskboard/taskboard.module#TaskboardModule'
+    path: 'niveau',
+    loadChildren: './niveau/niveau.module#NiveauModule'
   },
   {
-    path: 'taskboard-ngrx',
-    loadChildren: './taskboard-ngrx/taskboard-ngrx.module#TaskboardNGRXModule'
+    path: 'note',
+    loadChildren: './note/note.module#NoteModule'
   },
+  {
+    path: 'niveaux',
+    loadChildren: './niveaux/niveaux.module#NiveauxModule'
+  },
+  {
+    path: 'noteinfo',
+    loadChildren: './noteinfo/noteinfo.module#NoteinfoModule'
+  },
+  
   {
     path: 'player',
     loadChildren: './player/player.module#PlayerModule'

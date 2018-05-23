@@ -7,19 +7,19 @@ import {Observable} from "rxjs/Observable";
 export class NoteService {
   constructor(public _http:Http) { }
   getNotes():Observable<any>{
-    return this._http.get("http://localhost:4000/notes");
+    return this._http.get("http://localhost:3000/notes");
   }
  getNotebyId(id : number) :Observable<any> {
-    return this._http.get("http://localhost:4000/notes/"+ id );
+    return this._http.get("http://localhost:3000/notes/"+ id );
  }
 addNote(data) : Observable<any>{
-    return this._http.post("http://localhost:4000/notes", data);
+    return this._http.post("http://localhost:3000/notes", data);
 }
 updateNote(id : number, data) : Observable<any>{
-    return this._http.put("http://localhost:4000/notes/" +id, data);
+    return this._http.put("http://localhost:3000/notes/" +id, data);
 
 }
 deleteNote(id : number) : Observable<any>{
-    return this._http.delete("http://localhost:4000/notes/"+id );
+    return this._http.delete("http://localhost:3000/notes/"+id );
 }
 }

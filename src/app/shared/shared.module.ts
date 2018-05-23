@@ -1,5 +1,4 @@
 
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
@@ -16,7 +15,6 @@ import { EtudiantService } from './service/etudiant.service';
 import{ AdminService } from './service/admin.service';
 import{ MatiereService } from './service/matiere.service';
 import{ SeanceService } from './service/seance.service';
-import{ SpecialiteService } from './service/specialite.service';
 import{ SalleService } from './service/salle.service';
 import{ NiveauService } from './service/niveau.service';
 import{ AnneeService } from './service/annee.service';

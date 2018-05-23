@@ -1,0 +1,106 @@
+<!--Extended Table starts-->
+<div class="row">
+    <div class="col-12">
+        <div class="content-header"></div>
+        <p class="content-sub-header"></p>
+    </div>
+</div>
+<section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" style="color:#1A237E">Liste des etudiants</h4>
+                </div>
+ 
+      <a class="info p-0" data-original-title=""   title="" (click)="openContent()" >
+            &nbsp; &nbsp; &nbsp; &nbsp;    <i class="ft-user font-medium-3 btn btn-raised gradient-purple-bliss white shadow-z-1-hover" >  Ajouter un etudiant</i>
+    
+                    </a>
+                    <div class="form-group" >
+                        <div class="input-group col-sm-3">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" class="form-control" name="searchText" placeholder="chercher..." [(ngModel)]="searchText">
+                        </div>
+                    </div>
+                 <!--    <div class="form-group" >
+                        <div class="input-group col-sm-3">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                            <input type="text" class="form-control" name="Filterbyclass" placeholder="Filter par Classe:" [(ngModel)]="Filterbyclass">
+                        </div>
+                    </div>
+                 -->
+                <div class="card-body">
+                    <div class="card-block">
+                      
+                        <table class="table table-responsive-md text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th></th>
+                                    <th>Photo</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Nom d'utilisateur</th>
+                                    <th>Cin</th>
+                                    <th> Date de naissance</th>
+                                    <th>Classe</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                 
+                            <tbody>
+                                <tr  *ngFor="let etudiant of etudiants  | orderBy: order | filtersearch :'firstName' : searchText;  let i=index ">
+
+                                    <td>{{i+1}}</td>
+                                    <td>
+                                        <div class="custom-control custom-checkbox m-0" >
+                                            <input type="checkbox" class="custom-control-input" id="{{i}}" (click)="switch(etudiant.id)" >
+                                            <label class="custom-control-label" for="{{i}}"></label>
+                                        </div>
+                                    </td>
+                                    <td><img class="media-object round-media" src="http://localhost:3000/api/{{etudiant.photo}}" alt=" image" style="height: 75px;" /></td>
+                                    <td>{{etudiant.firstName}}</td>
+                                    <td>{{etudiant.lastName}}</td>
+                                    <td>{{etudiant.username}}</td>
+                                    <td>{{etudiant.cin}}</td>
+                                    <td>{{etudiant.date_naissance |date :  "dd.MM.y"}}</td>
+                                   <td>{{etudiant.classe.nom}}</td>
+                                    <td>
+                                       
+                                        <a class="success p-0" data-original-title="" title="" (click)="OpenUpdate()">
+                                            <i class="ft-edit-2 font-medium-3"></i>
+                                            
+                                        </a>
+                                
+                                        <a class="danger p-0" data-original-title="" title="" (click)="delete()" id="confirm-cancel" (click)="confirmCancelButton()"  >
+                                            <i class="ft-x font-medium-3"></i>
+                                        </a>
+
+                                    
+                                    
+                               
+
+
+
+
+
+                                  </td> 
+                                </tr>
+                                
+
+                        
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+</section>
+<!--Extended Table Ends-->

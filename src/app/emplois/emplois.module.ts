@@ -9,7 +9,8 @@ import { QuillModule } from 'ngx-quill'
 import { FormsModule } from '@angular/forms';
 import { EmploisComponent } from './emplois.component';
 import { EmploisRoutingModule } from './emplois-routing.module';
-import { EmploiComponent } from '../emploi/emploi.component';
+import { FilterPipe } from './filter.directive';
+import { FilterPipeJour } from './filter.directivejour';
 
 
 @NgModule({
@@ -19,16 +20,19 @@ import { EmploiComponent } from '../emploi/emploi.component';
         NgbModule,
         QuillModule,
         FormsModule, 
+        
     
     ],
     declarations: [
         EmploisComponent,
-        EmploiComponent,
+        FilterPipe,
+       FilterPipeJour,
+
     
       
     ],
     providers: [],
     bootstrap: [],
-    entryComponents: [EmploiComponent],
+   
 })
 export class EmploisModule { }

@@ -1,13 +1,14 @@
 export class Enseignant {
 
-    id:number;
-    nom:string;
-    prenom:string;
-    password:string;
-    username:string;
-    cin:string;
+    id: number;
+    email: string;
+    firstName:  string;
+    lastName : string;
+    cin:number;
     date_naissance:Date;
-    email:string;
+    username: string;
+    password: string;
+    selected:boolean;
    
    
    }

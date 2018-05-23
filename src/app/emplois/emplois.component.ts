@@ -7,7 +7,6 @@ import { FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/for
 import { Etudiant } from './../shared/modals/etudiant';
 import { NgForm, FormsModule } from '@angular/forms';
 import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
-import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { EtudiantService } from '../shared/service/etudiant.service';
 import { id } from '@swimlane/ngx-charts/release/utils';
 import * as $ from 'jquery';
@@ -16,7 +15,8 @@ import { Seance } from '../shared/modals/seance';
 
 import { ClasseService } from '../shared/service/classe.service';
 import { Classe } from '../shared/modals/classe';
-import { EmploiComponent } from '../emploi/emploi.component';
+import { element } from 'protractor';
+
 
 
 
@@ -30,8 +30,10 @@ export class EmploisComponent implements OnInit {
    seances:Seance[];
    classe: Classe;
    classes: Classe[];
+   public searchString:string;
+   public searchStringJour:string;
   constructor(
-    private modalService: NgbModal,
+  
     private seanceservice:SeanceService,
     private classeservice:ClasseService,
     private router: Router,
@@ -42,13 +44,15 @@ export class EmploisComponent implements OnInit {
     this.getallSeance();
   
   }
-
   getallSeance() {
 
     this.seanceservice.getSeances().subscribe(data => {
-
-      this.seances = JSON.parse(data._body);
+      var data = JSON.parse(data._body);
+      this.seances  = (data.data);
+      
+    //  this.seances = JSON.parse(data._body);
       this.seances.forEach(element => {
+/*       element.classe= element.classe.nom;  */
         element.selected = false;
       });
     })
@@ -97,19 +101,6 @@ export class EmploisComponent implements OnInit {
 
     });
   }
-  openContent() {
-    this.modalService.open(EmploiComponent);
-}
-/*OpenUpdate() {
-  let updateList = [];
-  this.seances.forEach(element => {
-    if(element.selected == true) {
-      this.seanceservice.setActionEntity(element);
-    }
-  });
   
-  this.modalService.open(EmploiComponent);
-}*/
-
 
 }

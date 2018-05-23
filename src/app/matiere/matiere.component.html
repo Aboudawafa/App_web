@@ -1,3 +1,59 @@
-<p>
-  matiere works!
-</p>
+<div class="row match-height">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+              <h4 class="card-title" id="basic-layout-form-center">Ajouter une nouvelle matière</h4>
+              
+            </div>
+            <div class="card-body">
+                <div class="px-3">
+
+                    <form class="form">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="form-body">
+                       
+                                    <div class="form-group" class="form-group col-12 mb-2">
+                                        <label for="eventInput2">Nom</label>
+                                        <input type="text" id="nom" class="form-control"  name="nom" required   [(ngModel)]="matiere.nom">
+                                    </div>
+
+
+
+                                    <div class="form-group" class="form-group col-12 mb-2">
+                                        <label for="eventInput2">Coefficient</label>
+                                        <input type="number" id="coefficient" class="form-control"  name="coefficient" required   [(ngModel)]="matiere.coefficient">
+                                    </div>
+                                      
+
+
+                                        <div class="form-group col-12 mb-2">
+                                            <label for="issueinput5">Unité</label>
+                                            <select id="unite" name="id_unite" [(ngModel)]="matiere.unite" class="form-control" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Priority">
+                                                <option></option>      
+                                                <option *ngFor="let unite of unites" [value]="unite.id">
+                                                    {{unite.nom_module}}
+                                                </option>
+                                            
+                                            </select>
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions center">
+                            <button type="reset" class="btn btn-raised btn-warning mr-1">
+                                <i class="ft-x"></i> Annuler
+                            </button>
+                            <button type="button" class="btn btn-raised btn-primary" (click)="addMatiere()"  routerLink="/matieres">
+                                <i class="fa fa-check-square-o"></i> Enregistrer
+                            </button>
+                        </div>
+                    </form>	
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

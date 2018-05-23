@@ -7,20 +7,20 @@ import {Observable} from "rxjs/Observable";
 export class AdminService {
   constructor(public _http:Http) { }
   getAdmins():Observable<any>{
-    return this._http.get("http://localhost:4000/admins");
+    return this._http.get("http://localhost:3000/admins");
   }
  getAdminbyId(id : number) :Observable<any> {
-    return this._http.get("http://localhost:4000/admins/"+ id );
+    return this._http.get("http://localhost:3000/admins/"+ id );
  }
 addAdmin(data) : Observable<any>{
-    return this._http.post("http://localhost:4000/admins", data);
+    return this._http.post("http://localhost:3000/admins", data);
 }
 updateAdmin(id : number, data) : Observable<any>{
-    return this._http.put("http://localhost:4000/admins/" +id, data);
+    return this._http.put("http://localhost:3000/admins/" +id, data);
 
 }
 deleteAdmin(id : number) : Observable<any>{
-    return this._http.delete("http://localhost:4000/admins/"+id );
+    return this._http.delete("http://localhost:3000/admins/"+id );
 }
 
 }

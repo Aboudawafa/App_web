@@ -1,3 +1,51 @@
-<p>
-  salle works!
-</p>
+<div class="row match-height">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" id="basic-layout-form-center">Ajouter une nouvelle salle</h4>
+              
+            </div>
+            <div class="card-body">
+                <div class="px-3">
+
+                    <form class="form">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="form-body">
+                       
+                                    <div class="form-group" class="form-group col-12 mb-2">
+                                        <label for="eventInput2">Nom</label>
+                                        <input type="text" id="nom_salle" class="form-control"  name="nom_salle" required   [(ngModel)]="salle.nom_salle">
+                                    </div>
+
+                                    <div class="form-group" class="form-group col-12 mb-2">
+                                        <label for="eventInput2">Numéro</label>
+                                        <input type="number" id="numero" class="form-control"  name="numero" required   [(ngModel)]="salle.numero">
+                                    </div>
+
+                                    <div class="form-group" class="form-group col-12 mb-2">
+                                        <label for="eventInput2">Type</label>
+                                        <input type="text" id="type" class="form-control"  name="type" required   [(ngModel)]="salle.type">
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions center">
+                            <button type="reset" class="btn btn-raised btn-warning mr-1">
+                                <i class="ft-x"></i> Annuler
+                            </button>
+                            <button type="submit" class="btn btn-raised btn-primary" (click)="AddSalle()" routerLink="/salles" >
+                                <i class="fa fa-check-square-o"></i> Enregistrer
+                          
+                            </button>
+                        </div>
+                    </form>	
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

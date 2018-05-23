@@ -10,8 +10,22 @@
       <div class="col-sm-12">
           <div class="card">
               <div class="card-header">
-                  <h4 class="card-title">Gestion des emplois du temps</h4>
+                  <h4 class="card-title">Liste des sèances </h4>
               </div>
+
+
+              <form>
+                <div class="form-group col-sm-9" >
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                       
+                Classe:<input type="text" class="form-control" name="searchString" placeholder="Filtrer par classe..." [(ngModel)]="searchString">   &nbsp;  &nbsp; &nbsp; &nbsp;   
+                Jour:<input type="text" class="form-control" name="searchStringJour" placeholder="Filtrer par jour..." [(ngModel)]="searchStringJour">       
+                </div>
+                </div>
+             </form>
+            
+
               <div class="card-body">
                   <div class="card-block">
                       <table class="table table-responsive-md text-center">
@@ -19,41 +33,44 @@
                               <tr>
                                   <th>#</th>
                                   <th></th>
+                                  <th>Enseignant</th>
                                   <th>Classe</th>
                                   <th>Matière</th>
                                   <th>Salle</th>
-                                 
-                                  <th>Date de début</th>
-                                  <th>Date de Fin</th>
+                                  <th>Jour</th>
+                                  <th>Heure de début</th>
+                                  <th>Heure de Fin</th>
                                   <th>Actions</th>
                               </tr>
                           </thead>
                           <tbody>
-                              <tr>
-                                  <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
-                                  <td>
-                                    <div class="custom-control custom-checkbox m-0" *ngFor="let seance of seances; let i=index">
+                              
+                              <tr *ngFor="let seance of seances | filter :'classe' : searchString | filterjour :'jour' : searchStringJour ;let i=index">
+                                  <td>{{seance.id}}</td>
+                                  <td
+                                     class="custom-control custom-checkbox m-0 ">
                                       <input type="checkbox" class="custom-control-input" id="{{i}}" (click)="switch(seance.id)" >
                                       <label class="custom-control-label" for="{{i}}"></label>
-                                  </div>
-                                  </td>
-                                 <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
-                                  <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
-                                  <td><div *ngFor="let seance of seances">{{seance.id}}</div></td>
                                  
-                                  <td><div *ngFor="let seance of seances">{{seance.date_debut | date :  "dd.MM.y"}}</div></td>
-                                  <td><div *ngFor="let seance of seances">{{seance.date_fin | date :  "dd.MM.y"}}</div></td>
-                                  <td><div *ngFor="let seance of seances">
-                                      <a class="info p-0" data-original-title="" title="" (click)="openContent()">
-                                          <i class="ft-user font-medium-3 mr-2"></i>
-                                      </a>
+                                  </td>
+                                  <td> {{seance.enseignant.firstName}} {{seance.enseignant.lastName}} </td>
+                                 <td> {{seance.classe.nom}} </td>
+                                  <td>{{seance.matiere.nom}}</td>
+                                  <td>{{seance.salle.numero}}</td>
+                                  <td>{{seance.jour}}</td>
+                                  <td>{{seance.date_debut}}</td>
+                                  <td>{{seance.date_fin }}</td>
+                                  <td>
+                                    <!--  <a class="info p-0" data-original-title="" title="" (click)="openContent()">
+                                          <i class="ft-plus font-medium-2 mr-2"></i>
+                                      </a>-->
                                       <a class="success p-0" data-original-title="" title="" ><!--(click)="OpenUpdate()"-->
-                                          <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                          <i class="ft-edit-2 font-medium-2 mr-2"></i>
                                       </a>
                                       <a class="danger p-0" data-original-title="" title="" (click)="delete()" >
-                                          <i class="ft-x font-medium-3 mr-2"></i>
+                                          <i class="ft-x font-medium-2 mr-2"></i>
                                       </a>
-                                    </div>  </td>
+                                     </td>
                               </tr>
             
                           </tbody>

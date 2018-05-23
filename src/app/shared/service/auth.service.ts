@@ -8,17 +8,17 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/Rx';
 @Injectable()
 export class AuthServices {
-  public token: string;
+/*   public token: string; */
 
   constructor(private http: Http) {
 
-      var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        this.token = currentUser && currentUser.token;
+     /*  var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.token = currentUser && currentUser.token; */
    }
 
   authEtudiant(data) : Observable<any> {
-      return this.http.post('http://localhost:4000/etudiants', data) .map((response: Response) => {
-      let token = response.json() && response.json().token ;
+      return this.http.post('http://localhost:3000/auth/login', data).map((response: Response) => {
+      /* let token = response.json() && response.json().token ;
       console.log("token :"+token);
       if (token) {
           // set token property
@@ -33,7 +33,7 @@ export class AuthServices {
       } else {
           // return false to indicate failed login
           return false;
-      }
+      } */
   }).catch(this.handleError);
 
   }
@@ -50,11 +50,11 @@ export class AuthServices {
   }
 
   
-  authEnseignant(data) : Observable<any>{
-    return this.http.post('http://localhost:4000/enseignants', data)
-  }
+  /* authEnseignant(data) : Observable<any>{
+    return this.http.post('http://localhost:3000/auth/login', data)
+  } */
   authAdministrateur(data) : Observable<any>{
-    return this.http.post('http://localhost:4000/admins', data)
+    return this.http.post('http://localhost:3000/auth/login', data)
 
   }
   }

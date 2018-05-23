@@ -1,6 +1,8 @@
 export class Niveau{
 id:number;
+libelle:string;
 description:string;
-id_classe:number;
+specialite:string;
+selected:boolean;
 
 }
