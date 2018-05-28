@@ -142,7 +142,10 @@ export const Full_ROUTES: Routes = [
     path: 'noteinfo',
     loadChildren: './noteinfo/noteinfo.module#NoteinfoModule'
   },
-  
+  {
+    path: 'noteinfos',
+    loadChildren: './noteinfos/noteinfos.module#NoteinfosModule'
+  },
   {
     path: 'player',
     loadChildren: './player/player.module#PlayerModule'

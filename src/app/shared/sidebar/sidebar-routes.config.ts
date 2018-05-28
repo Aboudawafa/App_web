@@ -50,6 +50,7 @@ export const ROUTES: RouteInfo[] = [
            
         ]
     },
+
     {
         path: '', title: 'Matières', icon: 'ft-map', class: 'has-sub', badge: '', badgeClass: 'badge badge-pill badge-success float-right mr-1 mt-1', isExternalLink: false,
         submenu: [
@@ -57,6 +58,13 @@ export const ROUTES: RouteInfo[] = [
             { path: '/matieres', title: 'Liste des Matières', icon: 'ft-book', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
             { path: '/unite', title: 'Ajout d\'une unité', icon:'ft-edit', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
             { path: '/unites', title: 'Liste des Unités', icon:'ft-list', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        ]
+    },
+    {
+        path: '', title: 'Notes d\'info', icon: 'fa fa-bell', class: 'has-sub', badge: '', badgeClass: 'badge badge-pill badge-danger float-right mr-1 mt-1', isExternalLink: false, submenu: [
+            { path: '/noteinfo', title: 'Ajout d\'une Note d\'info', icon: 'ft-plus', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/noteinfos', title: 'Liste des Notes d\'info', icon: 'ft-list', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+           
         ]
     },
     /*{ path: '/colorpalettes', title: 'Color Palette', icon: 'ft-droplet', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },*/

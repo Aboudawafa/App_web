@@ -1,0 +1,64 @@
+<div class="row match-height">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title" id="basic-layout-form-center">Note d'info </h4>
+  
+        </div>
+        <div class="card-body">
+  
+          <div class="px-3">
+  
+            <form class="form" enctype="multipart/form-data">
+              <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                  <div class="form-body">
+  
+  
+                    <div class="form-group">
+                      <label for="eventInput2">Titre :</label>
+                      <input type="text" id="titre" class="form-control" name="titre" required [(ngModel)]="noteinfo.titre">
+                    </div>
+                    <div class="form-group">
+                      <label for="timesheetinput7">Description :</label>
+                      <div class="position-relative has-icon-left">
+                        <textarea id="description" rows="5" class="form-control" name="description" required [(ngModel)]="noteinfo.description"></textarea>
+                        <div class="form-control-position">
+                          <i class="ft-file"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="timesheetinput3">Date :</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="date" id="date" class="form-control" name="date" required [(ngModel)]="noteinfo.date">
+                        <div class="form-control-position">
+                          <i class="ft-message-square"></i>
+                        </div>
+                      </div>
+                    </div>
+              
+  
+  
+  
+  
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-actions center">
+                <button type="reset" class="btn btn-raised btn-warning mr-1">
+                  <i class="ft-x"></i> Annuler
+                </button>
+                <button type="button" class="btn btn-raised btn-primary" (click)="addnoteinfo()">
+                  <i class="fa fa-check-square-o"></i> Enregistrer
+                </button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

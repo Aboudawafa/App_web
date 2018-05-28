@@ -1,5 +1,5 @@
 
-import { Injectable } from '@angular/core';
+import { Injectable,Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
@@ -9,6 +9,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class AuthServices {
 /*   public token: string; */
+@Output() id;
 
   constructor(private http: Http) {
 
@@ -17,7 +18,14 @@ export class AuthServices {
    }
 
   authEtudiant(data) : Observable<any> {
+    console.log("date service:"+data);
+   
       return this.http.post('http://localhost:3000/auth/login', data).map((response: Response) => {
+        
+        sessionStorage.setItem("id",response.json['id']);
+                  
+        this.id=response.json['id'];
+       
       /* let token = response.json() && response.json().token ;
       console.log("token :"+token);
       if (token) {

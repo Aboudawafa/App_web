@@ -36,18 +36,7 @@
                                 <img src="./assets/img/flags/us.png" alt="English" class="langimg">
                                 <span>English</span>
                             </a>
-                            <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('es')">
-                                <img src="./assets/img/flags/es.png" alt="Spanish" class="langimg">
-                                <span>Spanish</span>
-                            </a> 
-                            <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('pt')">
-                                <img src="./assets/img/flags/br.png" alt="Portuguese" class="langimg">
-                                <span>Portuguese</span>
-                            </a> 
-                            <a class="dropdown-item py-1 lang" href="javascript:;" (click)="ChangeLanguage('de')">
-                                <img src="./assets/img/flags/de.png" alt="German" class="langimg">
-                                <span>German</span>
-                            </a>                            
+                                              
                         </div>
                     </li>
                     <li class="nav-item" ngbDropdown placement="bottom-right">
@@ -58,36 +47,16 @@
                         </a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="notification-dropdown">
                             <div class="noti-list">
-                                <a class="dropdown-item noti-container py-3 border-bottom border-bottom-blue-grey border-bottom-lighten-4">
+                                <a  *ngFor="let noteinfo of noteinfos ; let i=index"  class="dropdown-item noti-container py-3 border-bottom border-bottom-blue-grey border-bottom-lighten-4">
                                     <i class="ft-bell info float-left d-block font-large-1 mt-1 mr-2"></i>
                                     <span class="noti-wrapper">
-                                        <span class="noti-title line-height-1 d-block text-bold-400 info">New Order Received</span>
-                                        <span class="noti-text">Lorem ipsum dolor sit ametitaque in, et!</span>
+                                        <span class="noti-title line-height-1 d-block text-bold-400 info">{{noteinfo.titre}}</span>
+                                        <span class="noti-text">{{noteinfo.description}}</span>
                                     </span>
                                 </a>
-                                <a class="dropdown-item noti-container py-3 border-bottom border-bottom-blue-grey border-bottom-lighten-4">
-                                    <i class="ft-bell warning float-left d-block font-large-1 mt-1 mr-2"></i>
-                                    <span class="noti-wrapper">
-                                        <span class="noti-title line-height-1 d-block text-bold-400 warning">New User Registered</span>
-                                        <span class="noti-text">Lorem ipsum dolor sit ametitaque in </span>
-                                    </span>
-                                </a>
-                                <a class="dropdown-item noti-container py-3 border-bottom border-bottom-blue-grey border-bottom-lighten-4">
-                                    <i class="ft-bell danger float-left d-block font-large-1 mt-1 mr-2"></i>
-                                    <span class="noti-wrapper">
-                                        <span class="noti-title line-height-1 d-block text-bold-400 danger">New Order Received</span>
-                                        <span class="noti-text">Lorem ipsum dolor sit ametest?</span>
-                                    </span>
-                                </a>
-                                <a class="dropdown-item noti-container py-3">
-                                    <i class="ft-bell success float-left d-block font-large-1 mt-1 mr-2"></i>
-                                    <span class="noti-wrapper">
-                                        <span class="noti-title line-height-1 d-block text-bold-400 success">New User Registered</span>
-                                        <span class="noti-text">Lorem ipsum dolor sit ametnatus aut.</span>
-                                    </span>
-                                </a>
+                               
                             </div>
-                            <a class="noti-footer primary text-center d-block border-top border-top-blue-grey border-top-lighten-4 text-bold-400 py-1">Read All Notifications</a>
+                            <a class="noti-footer primary text-center d-block border-top border-top-blue-grey border-top-lighten-4 text-bold-400 py-1" routerLink="/noteinfos" >Lire plus Notifications</a>
                         </div>
                     </li>
                     <li class="nav-item" ngbDropdown placement="bottom-right">
@@ -100,14 +69,7 @@
                                 <i class="ft-edit mr-2"></i>
                                 <span>My Profile</span>
                             </a>
-                            <a class="dropdown-item py-1" routerLink="/inbox">
-                                <i class="ft-mail mr-2"></i>
-                                <span>My Inbox</span>
-                            </a>
-                            <a class="dropdown-item py-1" href="javascript:;">
-                                <i class="ft-settings mr-2"></i>
-                                <span>Settings</span>
-                            </a>
+                    
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="javascript:;">
                                 <i class="ft-power mr-2"></i>
@@ -115,12 +77,7 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative notification-sidebar-toggle">
-                            <i class="ft-align-left font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">Notifications Sidebar</p>
-                        </a>
-                    </li>
+                  
                 </ul>
             </div>
         </div>

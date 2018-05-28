@@ -30,6 +30,9 @@ import { ActualiteService } from './shared/service/actualite.service';
 import { NiveauService } from './shared/service/niveau.service';
 import { AbsenceEtudiantService } from './shared/service/absence-etudiant.service';
 import { UniteService } from './shared/service/unite.service';
+import { NoteinfoService } from './shared/service/noteinfo.service';
+
+
 
 
 
@@ -45,7 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
         AppComponent,
         FullLayoutComponent,
         ContentLayoutComponent,
-
+     
 
 
     ],
@@ -86,6 +89,8 @@ export function createTranslateLoader(http: HttpClient) {
         NiveauService,
         AbsenceEtudiantService,
         UniteService,
+        NoteinfoService,
+
     
  
     ],

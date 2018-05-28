@@ -1,7 +1,7 @@
 import { Etudiant } from './../../../shared/modals/etudiant';
 import { id } from '@swimlane/ngx-charts/release/utils';
 import { Dashboard1Component } from './../../../dashboard/dashboard1/dashboard1.component';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
 import { AuthServices } from '../../../shared/service/auth.service';
@@ -17,8 +17,8 @@ import { typeSuccess } from '../../../shared/data/sweet-alerts';
 
 
 export class LoginPageComponent {
+    @Output() id;
   
-
     @ViewChild('f') loginForm: NgForm;
   /*   loginForm={
         email:'',
@@ -35,15 +35,14 @@ export class LoginPageComponent {
     onSubmit() {
      
       this.auth.authEtudiant(this.loginForm.value).subscribe(data => {
-        
+        console.log("data :"+data);
 
             if(data){
-            
+            console.log("id :"+data.id);
                    localStorage.setItem('id', JSON.stringify( data.id ));
                  /*   var token = JSON.parse(localStorage.getItem('token'));
                    var token = data.token; // your token */
-
-
+                  
             }else{
                 localStorage.setItem('token',null);
             } 
