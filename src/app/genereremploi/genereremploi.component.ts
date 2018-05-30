@@ -21,6 +21,10 @@ export class GenereremploiComponent {
   listeSeances : Event[];
   seanace:Event;
   config: any = {
+    dayNames:['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+    eventMoveHandling :"Disabled",
+    eventResizeHandling :"Disabled",
+    timeRangeSelectedHandling : "Disabled",
     viewType: "Week",
     theme: 'emploitemplate',
     startDate: DayPilot.Date.today(),

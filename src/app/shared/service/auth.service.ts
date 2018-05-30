@@ -22,7 +22,7 @@ export class AuthServices {
    
       return this.http.post('http://localhost:3000/auth/login', data).map((response: Response) => {
         
-        sessionStorage.setItem("id",response.json['id']);
+        sessionStorage.setItem("id",response.json());
                   
         this.id=response.json['id'];
        

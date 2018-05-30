@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from "@angular/router";
 import { AuthServices } from '../../../shared/service/auth.service';
 import { typeSuccess } from '../../../shared/data/sweet-alerts';
-
+import { LocalStorageService, SessionStorageService, LocalStorage, SessionStorage } from 'angular-web-storage';
 
 @Component({
     selector: 'app-login-page',
@@ -20,37 +20,36 @@ export class LoginPageComponent {
     @Output() id;
   
     @ViewChild('f') loginForm: NgForm;
-  /*   loginForm={
-        email:'',
-        password:''
-    } */
+    alertMessage = '';
 
     constructor(
         private auth: AuthServices,
         private router: Router,
         private route: ActivatedRoute ,
+        private storage: LocalStorageService
       ) { }
 
-    // On submit button click    
+    // On submit button click   
+    
     onSubmit() {
      
       this.auth.authEtudiant(this.loginForm.value).subscribe(data => {
         console.log("data :"+data);
 
-            if(data){
-            console.log("id :"+data.id);
-                   localStorage.setItem('id', JSON.stringify( data.id ));
-                 /*   var token = JSON.parse(localStorage.getItem('token'));
-                   var token = data.token; // your token */
-                  
-            }else{
-                localStorage.setItem('token',null);
-            } 
+        if(data){
+          localStorage.set('id',JSON.stringify(data.id));
+          localStorage.set('token',JSON.stringify(data.token));
+          console.log(localStorage.getItem('id'));
+            this.storage.get('id').then((val) => {
+              console.log('Your id is', val);
+            });
+            
+            
+          }else {
+            this.alertMessage = 'Wrong login informations';
+          }
+        })
 
-
-
-  
-        }) 
         this.router.navigate(['dashboard/dashboard1']); 
       /*   this.loginForm.reset(); */
     }

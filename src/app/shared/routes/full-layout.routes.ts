@@ -131,6 +131,10 @@ export const Full_ROUTES: Routes = [
     loadChildren: './niveau/niveau.module#NiveauModule'
   },
   {
+    path: 'consulteract',
+    loadChildren: './consulteract/consulteract.module#ConsulteractModule'
+  },
+  {
     path: 'note',
     loadChildren: './note/note.module#NoteModule'
   },
@@ -146,8 +150,4 @@ export const Full_ROUTES: Routes = [
     path: 'noteinfos',
     loadChildren: './noteinfos/noteinfos.module#NoteinfosModule'
   },
-  {
-    path: 'player',
-    loadChildren: './player/player.module#PlayerModule'
-  }
 ];

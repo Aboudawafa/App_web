@@ -1,4 +1,4 @@
-# [Apex - Angular 5+ Bootstrap Admin Template]
+# [ESMOD- Angular 5+ Bootstrap Admin Template]
 
 
 ### Changelog

@@ -31,13 +31,7 @@ import { NiveauService } from './shared/service/niveau.service';
 import { AbsenceEtudiantService } from './shared/service/absence-etudiant.service';
 import { UniteService } from './shared/service/unite.service';
 import { NoteinfoService } from './shared/service/noteinfo.service';
-
-
-
-
-
-
-
+import { AngularWebStorageModule } from 'angular-web-storage';
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,11 +42,13 @@ export function createTranslateLoader(http: HttpClient) {
         AppComponent,
         FullLayoutComponent,
         ContentLayoutComponent,
+  
      
 
 
     ],
     imports: [
+        AngularWebStorageModule,
         BrowserAnimationsModule,
         StoreModule.forRoot({}),
         AppRoutingModule,

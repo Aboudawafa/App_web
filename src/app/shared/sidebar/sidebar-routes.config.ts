@@ -3,12 +3,7 @@ import { RouteInfo } from './sidebar.metadata';
 //Sidebar menu Routes and data
 export const ROUTES: RouteInfo[] = [
 
-    {
-        path: '', title: 'Accueil', icon: 'ft-home', class: 'has-sub', badge: '', badgeClass: 'badge badge-pill badge-danger float-right mr-1 mt-1', isExternalLink: false, submenu: [
-            { path: '/dashboard/dashboard1', title: 'Dashboard1', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
-            { path: '/dashboard/dashboard2', title: 'Dashboard2', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
-        ]
-    },
+    { path: '/dashboard/dashboard1', title: 'Accueil', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     {
         path: '', title: ' Salles', icon: 'ft-grid', class: 'has-sub', badge: '', badgeClass: 'badge badge-pill badge-danger float-right mr-1 mt-1', isExternalLink: false, submenu: [
             { path: '/salle', title: ' Ajout d\'une salle', icon: 'ft-plus', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
@@ -46,7 +41,8 @@ export const ROUTES: RouteInfo[] = [
     {
         path: '', title: 'Actualités', icon: 'ft-image', class: 'has-sub', badge: '', badgeClass: 'badge badge-pill badge-danger float-right mr-1 mt-1', isExternalLink: false, submenu: [
             { path: '/actualite', title: 'Ajout d\'une Actualite', icon: 'ft-plus', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
-            { path: '/actualites', title: 'Liste des Actualite', icon: 'ft-list', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/actualites', title: 'Liste des Actualités', icon: 'ft-list', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/consulteract', title: 'Consulter les Actualités', icon: 'ft-list', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
            
         ]
     },
@@ -69,14 +65,12 @@ export const ROUTES: RouteInfo[] = [
     },
     /*{ path: '/colorpalettes', title: 'Color Palette', icon: 'ft-droplet', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },*/
     { path: '/etudiant', title: 'Etudiants', icon: 'ft-user', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
-   
-    { path: '/noteinfo', title: 'Notes d\'info', icon: 'fa fa-bell', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     { path: '/absence', title: 'Absences', icon: 'ft-calendar', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     { path: '/paiement', title: 'Payements', icon: 'fa fa-money', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     
     { path: '/note', title: 'Notes', icon: 'fa fa-flag-o', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     
-    { path: '/player', title: 'Player', icon: 'ft-music', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    
     {
         path: '', title: 'UI Kit', icon: 'ft-aperture', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
         submenu: [
